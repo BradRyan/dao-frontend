@@ -68,6 +68,8 @@ export default function Home() {
   );
 }
 
+// TODO: Ignor content below, I need to refactor this into a new component:
+
 function App() {
   const [balance, setBalance] = useState();
 
