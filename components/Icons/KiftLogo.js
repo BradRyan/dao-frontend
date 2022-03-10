@@ -6,7 +6,6 @@ const KiftLogo = ({ color = "black", size = 18, className, style }) => (
     className={className}
     height={size}
     style={style}
-    // viewBox="0 0 512 512"
     viewBox="0 0 73.1 43.83"
   >
     <title>KiftLogo</title>

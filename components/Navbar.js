@@ -3,11 +3,18 @@ import styled from "styled-components";
 import { useWeb3 } from "@3rdweb/hooks";
 
 import KiftLogo from "./Icons/KiftLogo";
+import DiscordLogo from "./Icons/DiscordLogo";
+import InstagramLogo from "./Icons/InstagramLogo";
 
 const Container = styled.nav`
-  display: flex;
   background: #f1ebd9;
+  display: flex;
   justify-content: space-between;
+  padding: 1rem;
+`;
+
+const NavbarRight = styled.div`
+  display: flex;
 `;
 
 const Navbar = () => {
@@ -21,22 +28,26 @@ const Navbar = () => {
   return (
     <Container>
       <div>
-        <KiftLogo />
+        <KiftLogo size={24} />
       </div>
 
-      <div>
-        <a href="https://kift.io/">Gallery</a>
+      <NavbarRight>
+        <a href="https://kift.io/">
+          <DiscordLogo />
+        </a>
+
+        <a href="https://kift.io/">
+          <InstagramLogo />
+        </a>
+
         <a href="https://kift.io/">About</a>
 
         {address && <>Wallet: {address}</>}
 
         {!address && (
-          <div>
-            <div>Please connect to Metamask to continue</div>
-            <button onClick={() => connectWallet("injected")}>Connect</button>
-          </div>
+          <button onClick={() => connectWallet("injected")}>Connect</button>
         )}
-      </div>
+      </NavbarRight>
     </Container>
   );
 };
